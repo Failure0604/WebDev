@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример 3 — Range</title>
+    <script>
+        function changeColor(range) {
+            var color = "rgb(" + range.value + ", 0, 0)";
+            document.getElementById("mycolor").style.backgroundColor = color;
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        input[type="range"] {
+            width: 250px;
+            vertical-align: middle;
+        }
+
+        #mycolor {
+            font-size: 24px;
+            padding: 10px;
+            margin-left: 15px;
+            border: 2px solid black;
+            width: 320px;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" min="0" max="255" value="255" oninput="changeColor(this)">
+    <input type="text" id="mycolor" value="Изменяемый цвет">
+</body>
+</html>
