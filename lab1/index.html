@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Неустроева Лабораторная 1</title>
+
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+}
+
+img{
+    width:400px;
+    cursor:pointer;
+}
+
+input{
+    margin-top:10px;
+    padding:5px;
+    font-size:16px;
+    text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Персонажи Смешариков</h2>
+
+<img id="mainImage" src="images/1.jpg" onclick="changeImage()">
+
+<br><br>
+
+<input id="imageName" value="Ёжик" readonly>
+
+<script>
+
+let currentIndex = 0;
+
+const images = [
+"images/1.jpg",
+"images/2.jpg",
+"images/3.jpg",
+"images/4.jpg",
+"images/5.jpg"
+];
+
+const names = [
+"Ёжик",
+"Нюша",
+"Крош",
+"Бараш",
+"Карыч"
+];
+
+function changeImage(){
+
+currentIndex++;
+
+if(currentIndex >= images.length){
+currentIndex = 0;
+}
+
+document.getElementById("mainImage").src = images[currentIndex];
+document.getElementById("imageName").value = names[currentIndex];
+
+}
+
+</script>
+
+</body>
+</html>
